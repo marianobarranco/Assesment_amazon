@@ -1,0 +1,105 @@
+<testsuite name="Assessment.Amazon validations" tests="5" errors="1" failures="0" skipped="4" time="36.13984" timestamp="2022-09-22T17:45:28.966532" hostname="DESKTOP-CPHO3US"><testcase classname="Assessment.Amazon validations" name="Validate that it is not possible to login with a valid but unregistered email" status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Validate that it is not possible to login with a valid but unregistered email
+    Given I am on the Arab Emirates Amazon homepage ... skipped in 0.000s
+    When I navigate to the sign in page ... skipped in 0.000s
+    And I attempt to sign in with a valid but unregistered email ... skipped in 0.000s
+    Then I should remain in the sig in page ... skipped in 0.000s
+    And an error message should be displayed ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="Assessment.Amazon validations" name="Validate that the items are added correctly to the cart" status="failed" time="36.13984"><error type="TimeoutException" message="Message: &#10;Stacktrace:&#10;Backtrace:&#10;&#09;Ordinal0 [0x00B1DF13+2219795]&#10;&#09;Ordinal0 [0x00AB2841+1779777]&#10;&#09;Ordinal0 [0x009C423D+803389]&#10;&#09;Ordinal0 [0x009F3025+995365]&#10;&#09;Ordinal0 [0x009F31EB+995819]&#10;&#09;Ordinal0 [0x00A20F52+1183570]&#10;&#09;Ordinal0 [0x00A0E844+1108036]&#10;&#09;Ordinal0 [0x00A1F192+1175954]&#10;&#09;Ordinal0 [0x00A0E616+1107478]&#10;&#09;Ordinal0 [0x009E7F89+950153]&#10;&#09;Ordinal0 [0x009E8F56+954198]&#10;&#09;GetHandleVerifier [0x00E12CB2+3040210]&#10;&#09;GetHandleVerifier [0x00E02BB4+2974420]&#10;&#09;GetHandleVerifier [0x00BB6A0A+565546]&#10;&#09;GetHandleVerifier [0x00BB5680+560544]&#10;&#09;Ordinal0 [0x00AB9A5C+1808988]&#10;&#09;Ordinal0 [0x00ABE3A8+1827752]&#10;&#09;Ordinal0 [0x00ABE495+1827989]&#10;&#09;Ordinal0 [0x00AC80A4+1867940]&#10;&#09;BaseThreadInitThunk [0x775CFA29+25]&#10;&#09;RtlGetAppContainerNamedObjectPath [0x77717B5E+286]&#10;&#09;RtlGetAppContainerNamedObjectPath [0x77717B2E+238]&#10;">
+<![CDATA[
+Failing step: And i attempt to add three units of the first item displayed to my cart ... failed in 20.180s
+Location: Amazon/features/Assessment.feature:15
+Traceback (most recent call last):
+  File "C:\Users\Juli\AppData\Local\Programs\Python\Python310\lib\site-packages\behave\model.py", line 1329, in run
+    match.run(runner.context)
+  File "C:\Users\Juli\AppData\Local\Programs\Python\Python310\lib\site-packages\behave\matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "Amazon\features\steps\assessment.py", line 76, in step_impl
+    product.add_three_items_to_cart()
+  File "C:\Users\Juli\PycharmProjects\pythonProject\Amazon\pages\productPage.py", line 52, in add_three_items_to_cart
+    WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable((By.XPATH,
+  File "C:\Users\Juli\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\support\wait.py", line 90, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00B1DF13+2219795]
+	Ordinal0 [0x00AB2841+1779777]
+	Ordinal0 [0x009C423D+803389]
+	Ordinal0 [0x009F3025+995365]
+	Ordinal0 [0x009F31EB+995819]
+	Ordinal0 [0x00A20F52+1183570]
+	Ordinal0 [0x00A0E844+1108036]
+	Ordinal0 [0x00A1F192+1175954]
+	Ordinal0 [0x00A0E616+1107478]
+	Ordinal0 [0x009E7F89+950153]
+	Ordinal0 [0x009E8F56+954198]
+	GetHandleVerifier [0x00E12CB2+3040210]
+	GetHandleVerifier [0x00E02BB4+2974420]
+	GetHandleVerifier [0x00BB6A0A+565546]
+	GetHandleVerifier [0x00BB5680+560544]
+	Ordinal0 [0x00AB9A5C+1808988]
+	Ordinal0 [0x00ABE3A8+1827752]
+	Ordinal0 [0x00ABE495+1827989]
+	Ordinal0 [0x00AC80A4+1867940]
+	BaseThreadInitThunk [0x775CFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77717B5E+286]
+	RtlGetAppContainerNamedObjectPath [0x77717B2E+238]
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Validate that the items are added correctly to the cart
+    Given I am on the Arab Emirates Amazon homepage ... passed in 1.163s
+    When i select the first item in the second category in todays deals ... passed in 14.796s
+    And i attempt to add three units of the first item displayed to my cart ... failed in 20.180s
+    Then i should see that the three items are added to my cart ... skipped in 0.000s
+    And the price and subtotal values are as expected ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="Assessment.Amazon validations" name="Validate that a signed out user can access the lists page but not the orders and addresses pages -- @1.1 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Validate that a signed out user can access the lists page but not the orders and addresses pages -- @1.1 
+    Given I am on the Arab Emirates Amazon homepage ... skipped in 0.000s
+    When i go to the Accounts and Lists option ... skipped in 0.000s
+    And i select the "addresses" option ... skipped in 0.000s
+    Then i should be sent to the "sign in" page ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="Assessment.Amazon validations" name="Validate that a signed out user can access the lists page but not the orders and addresses pages -- @1.2 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Validate that a signed out user can access the lists page but not the orders and addresses pages -- @1.2 
+    Given I am on the Arab Emirates Amazon homepage ... skipped in 0.000s
+    When i go to the Accounts and Lists option ... skipped in 0.000s
+    And i select the "orders" option ... skipped in 0.000s
+    Then i should be sent to the "sign in" page ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="Assessment.Amazon validations" name="Validate that a signed out user can access the lists page but not the orders and addresses pages -- @1.3 " status="skipped" time="0"><skipped /><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Validate that a signed out user can access the lists page but not the orders and addresses pages -- @1.3 
+    Given I am on the Arab Emirates Amazon homepage ... skipped in 0.000s
+    When i go to the Accounts and Lists option ... skipped in 0.000s
+    And i select the "lists" option ... skipped in 0.000s
+    Then i should be sent to the "lists" page ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
